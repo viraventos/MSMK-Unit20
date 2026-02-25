@@ -36,6 +36,7 @@ calculador(2, cubo);
 // Es una notación muy compacta
 
 cuadrado = (x) => x**2;
+
 mitad = (x) => x*0.5;
 
 calculador(2, cuadrado);

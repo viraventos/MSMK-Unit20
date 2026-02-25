@@ -34,6 +34,7 @@ miFuncionCalculadora = (x:number, y:number):number => x + y;
 type Libro = {
     titulo: string;
     autor: string;
+    editorial?: string;
 }
 
 let miLibro: Libro;

@@ -5,7 +5,7 @@
 // Bucle for
 {
     for(let x=1; x<=10; x++) {
-        console.log(`5 x ${x} = ${5*5}`);
+        console.log(`5 x ${x} = ${5*x}`);
     }
 }
 
@@ -13,7 +13,7 @@
 {
     let x=1;
     while(x<=10) {
-        console.log(`5 x ${x} = ${5*5}`);
+        console.log(`5 x ${x} = ${5*x}`);
         x = x + 1;
     }
 }

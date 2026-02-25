@@ -8,25 +8,23 @@ function saludar(nombre) {
 }
 
 // Expresión de función
-const saludar = function(nombre) {
+let saludar2 = function(nombre) {
     return 'Hola ' + nombre;
 }
 
 // Función flecha
-const saludar = (nombre) => { 
-    return 'Hola ' + nombre;
-}
+ saludar2 = (nombre) => { return 'Hola ' + nombre; }
 
 // Función flecha compacta (es equivalente, pero más compacta)
-const saludar = (nombre) =>  'Hola ' + nombre;
+ saludar2 = (nombre) => 'Hola ' + nombre;
 
 
 // Scope de una función
 { 
     const apellido = 'Herrero';
     const nombre = 'Carolina';
-
     const saludar = (nombre) =>  'Hola ' + nombre + ' ' + apellido;
+
     {
         const apellido = 'Panadero';
         saludar(nombre);

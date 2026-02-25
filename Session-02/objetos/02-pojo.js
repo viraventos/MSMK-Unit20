@@ -22,3 +22,5 @@ libro;
 // Convertir a JSON
 JSON.stringify(libro);
 
+cadenaSerializada='{"titulo":"El título","editorial":"La editorial","autor":"El nombre del autor","secciones":["Prologo","Capitulo 1","Capitulo 2","Indice"]}'
+

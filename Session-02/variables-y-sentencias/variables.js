@@ -1,6 +1,6 @@
 /*
  *
- * Variables en Javascript (y TypeScript)
+ * Variables en Javascript 
  * 
  */
 

@@ -25,7 +25,7 @@ a-b
 b/3
 b ** 3
 
-// Costructor
+// Constructor
 c=Number(23)
 d=Number('23')
 
