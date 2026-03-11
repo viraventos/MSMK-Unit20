@@ -20,3 +20,5 @@ RUN deluser --remove-home node \
 WORKDIR /app
 
 RUN mkdir -p /app/var/tmp
+
+RUN npm install -g tsx
