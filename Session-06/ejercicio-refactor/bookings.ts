@@ -5,10 +5,10 @@
  * Smells: Naming, SRP violated, code duplicity, magic numbers, error management, complex function
 */ 
 
-type R = { n: string; nts: number; pr: number; g?: number };
-type B = { id: string; usr: string; rooms: R[]; ds?: string; tot?: number };
+type Room = { n: string; nts: number; pr: number; g?: number };
+type Booking = { id: string; usr: string; rooms: Room[]; ds?: string; tot?: number };
 
-export function calc(b: B): any {
+export function calc(b: Booking): any {
   if (!b || !b.rooms || b.rooms.length == 0) throw "err";
 
   let x = 0;
@@ -29,6 +29,6 @@ export function calc(b: B): any {
 /**
  * Write here the problems you detected:
  * 
- * 
+ * The names are not significative.
  * 
  */
