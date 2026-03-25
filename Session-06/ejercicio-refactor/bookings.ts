@@ -1,34 +1,51 @@
-/* Clean code principiles
- * 
- * Exercise: Detect clean code problems
- * 
- * Smells: Naming, SRP violated, code duplicity, magic numbers, error management, complex function
-*/ 
+type Room = {
+  name: string;
+  nights: number;
+  price: number;
+};
 
-type R = { n: string; nts: number; pr: number; g?: number };
-type B = { id: string; usr: string; rooms: R[]; ds?: string; tot?: number };
+type Booking = {
+  id: string;
+  user: string;
+  rooms: Room[];
+  discount?: string;
+};
 
-export function calc(b: B): any {
-  if (!b || !b.rooms || b.rooms.length == 0) throw "err";
+type Result = {
+  ok: boolean;
+  total: number;
+};
 
-  let x = 0;
-  for (let i = 0; i < b.rooms.length; i++)  x += b.rooms[i].nts * b.rooms[i].pr;
+const PROMO = 0.1;
+const STAFF = 0.5;
+const VIP = 0.2;
 
-  if (b.ds) {
-  if (b.ds === "promo") x = x - x * 0.1;
-  if (b.ds === "staff") x = x - x * 0.5;
-  if (b.ds === "vip") x = x - x * 0.2;
+export function calc(b: Booking): Result {
+  if (!b || !b.rooms || b.rooms.length === 0) {
+    throw new Error("Invalid booking");
   }
 
-  console.log("saving...", b.id);
-  console.log("email to...", b.usr);
+  let total = 0;
 
-  return { ok: true, t: x };
+  for (let i = 0; i < b.rooms.length; i++) {
+    total += b.rooms[i].nights * b.rooms[i].price;
+  }
+
+  if (b.discount === "promo") total -= total * PROMO;
+  if (b.discount === "staff") total -= total * STAFF;
+  if (b.discount === "vip") total -= total * VIP;
+
+  console.log("saving...", b.id);
+
+  return { ok: true, total };
 }
 
 /**
- * Write here the problems you detected:
- * 
- * 
- * 
+ * Main problems detected:
+ *
+ * - Poor naming in original code (R, B, x, etc.).
+ * - SRP violation: function does calculation + logging.
+ * - Magic numbers for discounts.
+ * - Bad error handling (throwing string).
+ * - Code duplication in discount logic.
  */
