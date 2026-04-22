@@ -2,12 +2,14 @@ const { fizzbuzz } = require('./fizzbuzz');
 
 describe('FizzBuzz Suite', () => {
   
-  test('debe devolver "1" para el número 1', () => {
-    expect(fizzbuzz(1)).toBe("1");
+  test('debe gestionar casos que no son números', () => {
+    // Act
+    const result = fizzbuzz("hola");
+    // Assert
+    expect(result).toBe("Error");
   });
 
   test('debe devolver "Fizz" para múltiplos de 3', () => {
-    expect(fizzbuzz(3)).toBe("Fizz");
     expect(fizzbuzz(6)).toBe("Fizz");
   });
 
@@ -21,8 +23,8 @@ describe('FizzBuzz Suite', () => {
     expect(fizzbuzz(30)).toBe("FizzBuzz");
   });
 
-  test('debe gestionar casos que no son números', () => {
-    expect(fizzbuzz("hola")).toBe("Error");
+  test('debe devolver "1" para el número 1', () => {
+    expect(fizzbuzz(1)).toBe("1");
   });
 
 });

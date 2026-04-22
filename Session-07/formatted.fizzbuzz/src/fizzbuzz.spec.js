@@ -1,5 +1,7 @@
 /**
- * Test Unitario Base de FizzBuzz formateado.
+ * TEST INCORRECTO
+ * 
+ * Test unitario del FizzBuzz coloreado.
  * 
  * Este test es incorrecto porque depende del servicio de coloreado.
  * Los test unitarios solamente comprueban una clase, no pueden depender de otras.
@@ -10,9 +12,11 @@ const ColorService = require('./color.service');
 
 describe('FizzBuzz Suite', () => {
   let fizzbuzz;
+  let coloreador;
 
+  // ARRANGE
   beforeEach(() => {
-    let coloreador = new ColorService();
+    coloreador = new ColorService();
     fizzbuzz = new FizzBuzz(coloreador);
   });
 
@@ -21,18 +25,17 @@ describe('FizzBuzz Suite', () => {
   });
 
   test('debe devolver "Fizz" para múltiplos de 3', () => {
-    expect(fizzbuzz.execute(3)).toBe("Fizz");
-    expect(fizzbuzz.execute(6)).toBe("Fizz");
+    const result = fizzbuzz.execute(3);
+    const expected = coloreador.colorize("Fizz", 'cyan');
+    expect(result).toBe(expected);
   });
 
   test('debe devolver "Buzz" para múltiplos de 5', () => {
-    expect(fizzbuzz.execute(5)).toBe("Buzz");
-    expect(fizzbuzz.execute(10)).toBe("Buzz");
+    expect(fizzbuzz.execute(5)).toBe(coloreador.colorize("Buzz", 'yellow'));
   });
 
   test('debe devolver "FizzBuzz" para múltiplos de 15 (3 y 5)', () => {
-    expect(fizzbuzz.execute(15)).toBe("FizzBuzz");
-    expect(fizzbuzz.execute(30)).toBe("FizzBuzz");
+    expect(fizzbuzz.execute(15)).toBe(coloreador.colorize("FizzBuzz", 'magenta'));
   });
 
   test('debe gestionar casos que no son números', () => {
