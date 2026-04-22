@@ -1,0 +1,19 @@
+{
+    "name": "fizzbuzz-tdd",
+    "version": "1.0.0",
+    "main": "src/fizzbuzz.js",
+    "scripts": {
+        "test": "jest",
+        "test:watch": "jest --watchAll",
+        "test:cov": "jest --coverage",
+        "start": "node src/main.js"
+    },
+    "devDependencies": {
+        "jest": "^29.7.0"
+    },
+    "description": "",
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "type": "commonjs"
+}
