@@ -9,6 +9,12 @@
 
     /**
      * Returns the discount rate based on customer status.
+     * 
+     * Discounts rates are:
+     *   15% for regular customers
+     *   50% for vip customers
+     *   No discount for business
+     * 
      * @returns number
      */
     public abstract getDiscountRate():number;
