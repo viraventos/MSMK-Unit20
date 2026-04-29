@@ -27,3 +27,8 @@ The group has to assign the tasks to group members. Each member creates a reposi
 **NOTE**: It is important to write the `README.md` file with the names of the group members.
 
 When the pull request is approved, merge to main branch, and ....voila!!!!
+
+**TIPS**
+
+* Before running code, do `npm ci` to install libraries in node_modules.
+* To compile and run the program: `npm run dev`.
