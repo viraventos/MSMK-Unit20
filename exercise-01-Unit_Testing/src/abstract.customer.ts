@@ -1,0 +1,27 @@
+/**
+ * Represents a customer with specific tax and discount rules.
+ */
+
+ export abstract class AbstractCustomer {
+
+    constructor(name: string, type: 'regular' | 'vip' | 'business') {}
+
+
+    /**
+     * Returns the discount rate based on customer status.
+     * @returns number
+     */
+    public abstract getDiscountRate():number;
+
+    /**
+     * Returns the tax rate (VAT) based on customer category.
+     * @returns number
+     */
+    public abstract getTaxRate():number;
+
+    /**
+     * Getter for customer name
+     * @returns string
+     */
+    public abstract getName(): string;
+}
