@@ -21,6 +21,11 @@
 
     /**
      * Returns the tax rate (VAT) based on customer category.
+     * 
+     * TAX VAT rates are:
+     *   21% for non business customers
+     *   10% for business
+     * 
      * @returns number
      */
     public abstract getTaxRate():number;
