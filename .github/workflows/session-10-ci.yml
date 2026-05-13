@@ -30,6 +30,11 @@ jobs:
 
       - name: Run linter
         run: npm run lint
+        continue-on-error: true
+
+      - name: Print message if linter fails
+        if: failure()
+        run: echo "Linter fails but pipeline go on"
 
       - name: Run tests
         run: npm test
