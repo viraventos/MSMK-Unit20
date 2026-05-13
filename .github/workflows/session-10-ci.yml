@@ -14,6 +14,9 @@ jobs:
       run:
         working-directory: Session-10/hangman
 
+    env:
+      FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: "true"
+
     steps:
       - name: Code Checkout
         uses: actions/checkout@v4
