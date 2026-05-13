@@ -20,7 +20,7 @@ function loop() {
   rl.question("Letra: ", (input) => {
     const letter = input.toLowerCase();
 
-    if (letter.length !== 1) {
+    if (letter.length !== 1) {       
       console.log("Introduce solo una letra");
       return loop();
     }
