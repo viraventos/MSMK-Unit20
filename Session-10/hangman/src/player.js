@@ -1,5 +1,5 @@
 export class Player {
-    constructor(maxAttempts = 6) {
+    constructor(maxAttempts = 5) {
       this.attempts = maxAttempts;
       this.usedLetters = [];
     }
