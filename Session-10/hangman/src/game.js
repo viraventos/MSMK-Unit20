@@ -1,6 +1,4 @@
-import readline from 'readline';
 import { Player } from './player.js';
-import { Renderer } from './renderer.js';
 
 export class Game {
   constructor(word) {
