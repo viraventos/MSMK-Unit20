@@ -34,7 +34,7 @@ describe('Player', () => {
   });
 
   test('Reduce attempts left after fail', () => {
-    const player = new Player();
+    const player = new Player(6);
 
     player.loseAttempt();
 

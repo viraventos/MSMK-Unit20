@@ -2,7 +2,7 @@
   "type": "module",
   "scripts": {
     "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js",
-    "run": "node src/index.js",
+    "start": "node src/index.js",
     "lint": "eslint ."
   },
   "devDependencies": {
