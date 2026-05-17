@@ -1,0 +1,43 @@
+name: CI Session 10 - Hangman
+
+on:
+  push:
+    branches: [ session-10 ]
+  pull_request:
+    branches: [ session-10 ]
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+
+    defaults:
+      run:
+        working-directory: Session-10/hangman
+
+    env:
+      FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: "true"
+
+    steps:
+      - name: Code Checkout
+        uses: actions/checkout@v4
+
+      - name: Use Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: 'npm'
+          cache-dependency-path: Session-10/hangman/package-lock.json
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run linter
+        run: npm run lint
+        continue-on-error: true
+
+      - name: Print message if linter fails
+        if: failure()
+        run: echo "Linter fails but pipeline go on"
+
+      - name: Run tests
+        run: npm test
